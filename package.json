@@ -14,7 +14,8 @@
     "lint": "eslint src/ --ext .ts",
     "compile": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
-    "ts": "node --loader ts-node/esm"
+    "ts": "node --loader ts-node/esm",
+    "mock:server": "json-server ./mocks/server-data.mock.json --port 3123"
   },
   "devDependencies": {
     "@types/node": "18.16.3",
@@ -33,6 +34,8 @@
     "npm": ">=8"
   },
   "dependencies": {
-    "chalk": "5.6.2"
+    "chalk": "5.6.2",
+    "dayjs": "1.11.19",
+    "got": "13.0.0"
   }
 }
