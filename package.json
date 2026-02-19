@@ -18,6 +18,7 @@
     "mock:server": "json-server ./mocks/server-data.mock.json --port 3123"
   },
   "devDependencies": {
+    "@types/got": "9.6.12",
     "@types/node": "18.16.3",
     "@typescript-eslint/eslint-plugin": "5.46.0",
     "@typescript-eslint/parser": "5.46.0",
@@ -30,7 +31,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^18.0.0",
+    "node": "^22.0.0",
     "npm": ">=8"
   },
   "dependencies": {
