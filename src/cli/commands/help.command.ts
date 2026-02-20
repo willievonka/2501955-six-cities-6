@@ -16,6 +16,7 @@ export class HelpCommand implements ICommand {
     console.info(`  ${chalk.yellow('--version:')}                     ${chalk.blue('# выводит номер версии')}`);
     console.info(`  ${chalk.yellow('--help:')}                        ${chalk.blue('# печатает этот текст')}`);
     console.info(`  ${chalk.yellow('--import <path>:')}               ${chalk.blue('# импортирует данные из TSV')}`);
+    console.info(`  ${chalk.yellow('--generate <n> <path> <url>:')}   ${chalk.blue('# генерирует произвольное количество тестовых данных')}`);
     console.info(chalk.magenta('<------------------------------------------------------------->'));
   }
 }

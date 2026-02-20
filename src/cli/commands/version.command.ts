@@ -4,6 +4,7 @@ import { CommandName } from './enums/command-name.enum.js';
 import { ICommand } from './interfaces/command.interface.js';
 import { isPackageJSONConfig } from './utils/is-package-json-config.util.js';
 import chalk from 'chalk';
+import { getErrorMessage } from '../../shared/helpers/index.js';
 
 export class VersionCommand implements ICommand {
   constructor (
@@ -18,11 +19,9 @@ export class VersionCommand implements ICommand {
     try {
       const version: string = this.readVersion();
       console.info(chalk.green(`Version: ${version}`));
-    } catch (err: unknown) {
+    } catch (error: unknown) {
       console.error(chalk.red(`Failed to read version from: ${chalk.cyan.underline(this._filePath)}`));
-      if (err instanceof Error) {
-        console.error(chalk.red(`Details: ${err.message}`));
-      }
+      console.error(chalk.red(getErrorMessage(error)));
     }
   }
 

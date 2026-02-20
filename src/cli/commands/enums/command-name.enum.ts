@@ -1,5 +1,6 @@
 export enum CommandName {
   Version = '--version',
   Help = '--help',
-  Import = '--import'
+  Import = '--import',
+  Generate = '--generate'
 }
