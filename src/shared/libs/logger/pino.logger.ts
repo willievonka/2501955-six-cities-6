@@ -2,7 +2,9 @@ import { resolve } from 'node:path';
 import { ILogger } from './interfaces/logger.interface.js';
 import { DestinationStream as PinoDestinationStream, Logger as PinoInstanse, pino, transport } from 'pino';
 import { getCurrentModuleDirectoryPath } from '../../helpers/index.js';
+import { injectable } from 'inversify';
 
+@injectable()
 export class PinoLogger implements ILogger {
   private readonly _logger: PinoInstanse;
 
@@ -27,6 +29,7 @@ export class PinoLogger implements ILogger {
     });
 
     this._logger = pino({}, multiTransport);
+    this._logger.info('Logger created...');
   }
 
   public info(message: string): void {

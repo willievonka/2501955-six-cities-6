@@ -3,12 +3,15 @@ import { IConfig } from './interfaces/config.interface.js';
 import { ILogger } from '../logger/index.js';
 import { RestSchema } from './types/rest-schema.type.js';
 import { configRestSchema } from './rest.schema.js';
+import { inject, injectable } from 'inversify';
+import { Component } from '../../types/index.js';
 
+@injectable()
 export class RestConfig implements IConfig<RestSchema> {
   private readonly _config: RestSchema;
 
   constructor(
-    private readonly _logger: ILogger
+    @inject(Component.Logger) private readonly _logger: ILogger
   ) {
     const parsedOutput: DotenvConfigOutput = config();
     if (parsedOutput.error) {
