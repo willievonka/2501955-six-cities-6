@@ -1,8 +1,8 @@
-export function generateRandomValue(min:number, max: number, numAfterDigit = 0) {
+export function generateRandomValue(min:number, max: number, numAfterDigit = 0): number {
   return +((Math.random() * (max - min)) + min).toFixed(numAfterDigit);
 }
 
-export function getRandomItems<T>(items: T[], count?: number):T[] {
+export function getRandomItems<T>(items: T[], count?: number): T[] {
   if (count === undefined) {
     const startPosition = generateRandomValue(0, items.length - 1);
     const endPosition = startPosition + generateRandomValue(startPosition, items.length);
@@ -14,7 +14,7 @@ export function getRandomItems<T>(items: T[], count?: number):T[] {
   return items.slice(startPosition, startPosition + safeCount);
 }
 
-export function getRandomItem<T>(items: T[]):T {
+export function getRandomItem<T>(items: T[]): T {
   return items[generateRandomValue(0, items.length - 1)];
 }
 
