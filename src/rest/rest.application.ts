@@ -1,10 +1,10 @@
-import { IConfig } from '../shared/libs/config/index.js';
+import { IConfig, RestSchema } from '../shared/libs/config/index.js';
 import { ILogger } from '../shared/libs/logger/index.js';
 
 export class RestApplication {
   constructor(
     private readonly _logger: ILogger,
-    private readonly _config: IConfig
+    private readonly _config: IConfig<RestSchema>
   ) {}
 
   public async init(): Promise<void> {
