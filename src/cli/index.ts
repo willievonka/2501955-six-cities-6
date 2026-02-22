@@ -1,4 +1,4 @@
-export * from './cli-application.js';
+export * from './cli.application.js';
 export * from './utils/command-parser.util.js';
 export * from './commands/help.command.js';
 export * from './commands/version.command.js';
